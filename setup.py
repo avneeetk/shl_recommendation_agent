@@ -8,7 +8,7 @@ setup(
         "fastapi",
         "streamlit",
         "google-generativeai",
-        "pinecone-client",
+        "pinecone",
         "python-dotenv"
     ],
 )
