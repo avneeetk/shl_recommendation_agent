@@ -1,0 +1,14 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+
+# Virtual environment
+.env
+.venv/
+
+
+
+
