@@ -9,10 +9,11 @@ async def recommend(request: Request):
         body = await request.json()
         query_text = body.get("query", "").strip()
         if not query_text:
-            return {"error": "Query is required."}
+            return {"results":[]}
 
         results = search_pinecone(query_text, top_k=3)
-        return {"results": results}
-    
+        return {"results": results or []}
+
     except Exception as e:
-        return {"error": str(e)}
+        print(f"API Error: {str(e)}")
+        return {"results": []}

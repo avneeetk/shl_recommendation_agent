@@ -4,7 +4,6 @@ from src.api.routes import router
 
 app = FastAPI(title="SHL Assessment Recommender")
 
-# Allow frontend (Streamlit/React) to call API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,5 +12,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
-
+app.include_router(router, prefix="/api/v1")
