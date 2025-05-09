@@ -19,7 +19,7 @@ if user_input:
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     
    
-    response = requests.post("https://shl-api-abcdef.onrender.com/api/v1/recommend", json={"query": user_input})
+    response = requests.post("https://shl-recommendation-agent-1.onrender.com/api/v1/recommend", json={"query": user_input})
 
     results = response.json().get("results", []) if response.status_code == 200 else []
 
